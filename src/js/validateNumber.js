@@ -1,12 +1,12 @@
-export const getNumber = (num) => {
+export const validateNumber = (num) => {
   try {
-    if (!isFinite(num)) {
+    if (!parseInt(num, 10)) {
       throw new SyntaxError('Данные некорректны');
     }
-    return num;
+    return parseInt(num);
   } catch (e) {
     console.log('Ошибка произошла!');
   }
 };
 
-getNumber('5');
+validateNumber('5');
